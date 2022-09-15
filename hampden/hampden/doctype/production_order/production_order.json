@@ -1,0 +1,660 @@
+{
+ "allow_import": 1,
+ "autoname": "naming_series:",
+ "creation": "2021-04-27 04:14:01.299203",
+ "doctype": "DocType",
+ "document_type": "Setup",
+ "engine": "InnoDB",
+ "field_order": [
+  "item",
+  "naming_series",
+  "status",
+  "sales_order",
+  "personalization",
+  "production_item",
+  "item_name",
+  "image",
+  "bom_no",
+  "column_break1",
+  "company",
+  "description",
+  "stock_uom",
+  "qty",
+  "material_transferred_for_manufacturing",
+  "produced_qty",
+  "project",
+  "settings_section1",
+  "allow_alternative_item",
+  "use_multi_level_bom",
+  "column_break_18",
+  "skip_transfer",
+  "from_wip_warehouse",
+  "update_consumed_material_cost_in_project",
+  "production_steps_section",
+  "production_route",
+  "production_steps",
+  "warehouses",
+  "wip_warehouse",
+  "fg_warehouse",
+  "column_break_12",
+  "scrap_warehouse",
+  "required_items_section",
+  "required_items",
+  "scrap_items",
+  "time",
+  "planned_start_date",
+  "actual_start_date",
+  "column_break_13",
+  "planned_end_date",
+  "actual_end_date",
+  "expected_delivery_date",
+  "operations_section",
+  "transfer_material_against",
+  "operations",
+  "section_break_22",
+  "planned_operating_cost",
+  "actual_operating_cost",
+  "additional_operating_cost",
+  "column_break_24",
+  "total_operating_cost",
+  "more_info",
+  "column_break2",
+  "material_request",
+  "material_request_item",
+  "sales_order_item",
+  "production_plan",
+  "production_plan_item",
+  "product_bundle_item",
+  "amended_from",
+  "production_cost_section",
+  "total_labor",
+  "total_overhead",
+  "scrap_material_cost",
+  "column_break_65",
+  "intrinsic_material_cost",
+  "fabrication_cost",
+  "cutting_loss_cost",
+  "column_break_69",
+  "total_production_route",
+  "raw_material_cost",
+  "total_cost",
+  "settings_section",
+  "tray",
+  "is_paid",
+  "last_step"
+ ],
+ "fields": [
+  {
+   "fieldname": "item",
+   "fieldtype": "Section Break",
+   "options": "fa fa-gift"
+  },
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Series",
+   "no_copy": 1,
+   "options": "PRO-.YYYY.-",
+   "print_hide": 1,
+   "reqd": 1,
+   "set_only_once": 1
+  },
+  {
+   "default": "Draft",
+   "depends_on": "eval:!doc.__islocal",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "no_copy": 1,
+   "oldfieldname": "status",
+   "oldfieldtype": "Select",
+   "options": "\nDraft\nSubmitted\nNot Started\nIn Process\nCompleted\nStopped\nCancelled",
+   "read_only": 1,
+   "reqd": 1,
+   "search_index": 1
+  },
+  {
+   "depends_on": "sales_order",
+   "fieldname": "production_item",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Item To Manufacture",
+   "oldfieldname": "production_item",
+   "oldfieldtype": "Link",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.production_item",
+   "fieldname": "item_name",
+   "fieldtype": "Data",
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.production_item",
+   "fetch_from": "production_item.image",
+   "fieldname": "image",
+   "fieldtype": "Attach Image",
+   "hidden": 1,
+   "label": "Image",
+   "options": "image",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.production_item",
+   "fieldname": "bom_no",
+   "fieldtype": "Link",
+   "label": "BOM No",
+   "oldfieldname": "bom_no",
+   "oldfieldtype": "Link",
+   "options": "BOM",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break1",
+   "fieldtype": "Column Break",
+   "oldfieldtype": "Column Break",
+   "width": "50%"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "oldfieldname": "company",
+   "oldfieldtype": "Link",
+   "options": "Company",
+   "remember_last_selected_value": 1,
+   "reqd": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "label": "Qty To Manufacture",
+   "oldfieldname": "qty",
+   "oldfieldtype": "Currency",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.docstatus==1",
+   "fieldname": "produced_qty",
+   "fieldtype": "Percent",
+   "label": "Manufactured Qty %",
+   "no_copy": 1,
+   "oldfieldname": "produced_qty",
+   "oldfieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "in_global_search": 1,
+   "label": "Customer Order",
+   "options": "Sales Order",
+   "reqd": 1
+  },
+  {
+   "fieldname": "settings_section",
+   "fieldtype": "Section Break",
+   "label": "Settings"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_alternative_item",
+   "fieldtype": "Check",
+   "label": "Allow Alternative Item"
+  },
+  {
+   "default": "0",
+   "description": "Plan material for sub-assemblies",
+   "fieldname": "use_multi_level_bom",
+   "fieldtype": "Check",
+   "label": "Use Multi-Level BOM",
+   "print_hide": 1
+  },
+  {
+   "fieldname": "column_break_18",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "description": "Check if material transfer entry is not required",
+   "fieldname": "skip_transfer",
+   "fieldtype": "Check",
+   "label": "Skip Material Transfer to WIP Warehouse"
+  },
+  {
+   "default": "0",
+   "depends_on": "skip_transfer",
+   "fieldname": "from_wip_warehouse",
+   "fieldtype": "Check",
+   "label": "Backflush Raw Materials From Work-in-Progress Warehouse"
+  },
+  {
+   "default": "1",
+   "fieldname": "update_consumed_material_cost_in_project",
+   "fieldtype": "Check",
+   "label": "Update Consumed Material Cost In Project"
+  },
+  {
+   "fieldname": "warehouses",
+   "fieldtype": "Section Break",
+   "label": "Warehouses",
+   "options": "fa fa-building"
+  },
+  {
+   "fieldname": "wip_warehouse",
+   "fieldtype": "Link",
+   "label": "Work-in-Progress Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "fg_warehouse",
+   "fieldtype": "Link",
+   "label": "Target Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "scrap_warehouse",
+   "fieldtype": "Link",
+   "label": "Scrap Warehouse",
+   "options": "Warehouse"
+  },
+  {
+   "fieldname": "required_items_section",
+   "fieldtype": "Section Break",
+   "label": "Required Items"
+  },
+  {
+   "fieldname": "required_items",
+   "fieldtype": "Table",
+   "label": "Required Items",
+   "no_copy": 1,
+   "options": "Production Order Item",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "time",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Time",
+   "options": "fa fa-time"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "now",
+   "fieldname": "planned_start_date",
+   "fieldtype": "Datetime",
+   "label": "Planned Start Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "actual_start_date",
+   "fieldtype": "Datetime",
+   "label": "Actual Start Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "planned_end_date",
+   "fieldtype": "Datetime",
+   "label": "Planned End Date",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "actual_end_date",
+   "fieldtype": "Datetime",
+   "label": "Actual End Date",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "expected_delivery_date",
+   "fieldtype": "Date",
+   "label": "Expected Delivery Date"
+  },
+  {
+   "fieldname": "operations_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Operations",
+   "options": "fa fa-wrench"
+  },
+  {
+   "default": "Work Order",
+   "depends_on": "operations",
+   "fieldname": "transfer_material_against",
+   "fieldtype": "Select",
+   "label": "Transfer Material Against",
+   "options": "\nWork Order\nJob Card"
+  },
+  {
+   "fieldname": "operations",
+   "fieldtype": "Table",
+   "label": "Operations",
+   "options": "Work Order Operation",
+   "read_only": 1
+  },
+  {
+   "depends_on": "operations",
+   "fieldname": "section_break_22",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Operation Cost"
+  },
+  {
+   "fieldname": "planned_operating_cost",
+   "fieldtype": "Currency",
+   "label": "Planned Operating Cost",
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "actual_operating_cost",
+   "fieldtype": "Currency",
+   "label": "Actual Operating Cost",
+   "no_copy": 1,
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "additional_operating_cost",
+   "fieldtype": "Currency",
+   "label": "Additional Operating Cost",
+   "no_copy": 1,
+   "options": "Company:company:default_currency"
+  },
+  {
+   "fieldname": "column_break_24",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_operating_cost",
+   "fieldtype": "Currency",
+   "label": "Total Operating Cost",
+   "no_copy": 1,
+   "options": "Company:company:default_currency",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "more_info",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "More Information",
+   "options": "fa fa-file-text"
+  },
+  {
+   "fieldname": "description",
+   "fieldtype": "Small Text",
+   "label": "Item Description",
+   "read_only": 1
+  },
+  {
+   "fieldname": "stock_uom",
+   "fieldtype": "Link",
+   "label": "Stock UOM",
+   "oldfieldname": "stock_uom",
+   "oldfieldtype": "Data",
+   "options": "UOM",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break2",
+   "fieldtype": "Column Break",
+   "width": "50%"
+  },
+  {
+   "description": "Manufacture against Material Request",
+   "fieldname": "material_request",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Material Request",
+   "options": "Material Request"
+  },
+  {
+   "fieldname": "material_request_item",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Material Request Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_order_item",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Sales Order Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "production_plan",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Production Plan",
+   "no_copy": 1,
+   "options": "Production Plan",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "production_plan_item",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Production Plan Item",
+   "no_copy": 1,
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "product_bundle_item",
+   "fieldtype": "Link",
+   "label": "Product Bundle Item",
+   "no_copy": 1,
+   "options": "Item",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "production_steps_section",
+   "fieldtype": "Section Break",
+   "label": "Production Steps"
+  },
+  {
+   "fieldname": "production_route",
+   "fieldtype": "Link",
+   "label": "Production Route",
+   "options": "Production Route",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "production_steps",
+   "fieldtype": "Table",
+   "label": "Production Steps",
+   "options": "Production Order Steps"
+  },
+  {
+   "fieldname": "project",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Project",
+   "options": "Project"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Production Order",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "scrap_items",
+   "fieldtype": "Table",
+   "label": "Scrap Items",
+   "options": "Production Order Scrap",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_paid",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Is Paid",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "production_cost_section",
+   "fieldtype": "Section Break",
+   "label": "Production Cost"
+  },
+  {
+   "fieldname": "total_labor",
+   "fieldtype": "Read Only",
+   "label": "Total Labor"
+  },
+  {
+   "fieldname": "total_overhead",
+   "fieldtype": "Read Only",
+   "label": "Total Overhead"
+  },
+  {
+   "fieldname": "scrap_material_cost",
+   "fieldtype": "Read Only",
+   "hidden": 1,
+   "label": "Scrap Material Cost"
+  },
+  {
+   "fieldname": "column_break_65",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "intrinsic_material_cost",
+   "fieldtype": "Read Only",
+   "label": "Intrinsic Material Cost"
+  },
+  {
+   "fieldname": "fabrication_cost",
+   "fieldtype": "Read Only",
+   "label": "Fabrication Cost"
+  },
+  {
+   "fieldname": "cutting_loss_cost",
+   "fieldtype": "Read Only",
+   "label": "Cutting Loss Cost"
+  },
+  {
+   "fieldname": "column_break_69",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "total_production_route",
+   "fieldtype": "Read Only",
+   "label": "Total Production Route"
+  },
+  {
+   "fieldname": "raw_material_cost",
+   "fieldtype": "Read Only",
+   "label": "Raw Material Cost"
+  },
+  {
+   "fieldname": "total_cost",
+   "fieldtype": "Read Only",
+   "label": "Total Cost"
+  },
+  {
+   "default": "0",
+   "fieldname": "last_step",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Last Updated Complete",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "settings_section1",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Settings"
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.docstatus==1 && doc.skip_transfer==0",
+   "fieldname": "material_transferred_for_manufacturing",
+   "fieldtype": "Percent",
+   "label": "Material Transferred for Manufacturing %",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "tray",
+   "fieldtype": "Link",
+   "label": "Tray",
+   "no_copy": 1,
+   "options": "Tray",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "sales_order.personalization",
+   "fieldname": "personalization",
+   "fieldtype": "Text Editor",
+   "label": "Personalization",
+   "read_only": 1
+  }
+ ],
+ "icon": "fa fa-cogs",
+ "image_field": "image",
+ "is_submittable": 1,
+ "modified": "2022-03-01 08:41:01.480463",
+ "modified_by": "Administrator",
+ "module": "Hampden",
+ "name": "Production Order",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "set_user_permissions": 1,
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "report": 1,
+   "role": "Stock User"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "ASC",
+ "track_changes": 1,
+ "track_seen": 1
+}

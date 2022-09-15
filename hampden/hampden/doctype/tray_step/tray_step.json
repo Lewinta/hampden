@@ -1,0 +1,50 @@
+{
+ "creation": "2021-08-30 06:32:22.342176",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "production_step",
+  "issue_step",
+  "finish_step"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "columns": 2,
+   "fieldname": "production_step",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Production Step",
+   "options": "Production Step",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "issue_step",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Issue Step",
+   "options": "Issue Step",
+   "read_only": 1
+  },
+  {
+   "fieldname": "finish_step",
+   "fieldtype": "Button",
+   "in_list_view": 1,
+   "label": "Finish Step"
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-08-30 06:41:08.952907",
+ "modified_by": "Administrator",
+ "module": "Hampden",
+ "name": "Tray Step",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include hampden *.css
+recursive-include hampden *.csv
+recursive-include hampden *.html
+recursive-include hampden *.ico
+recursive-include hampden *.js
+recursive-include hampden *.json
+recursive-include hampden *.md
+recursive-include hampden *.png
+recursive-include hampden *.py
+recursive-include hampden *.svg
+recursive-include hampden *.txt
+recursive-exclude hampden *.pyc

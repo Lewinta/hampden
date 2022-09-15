@@ -1,0 +1,206 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "format:{customer}-{DD}-{MM}-{YY}-{###}",
+ "creation": "2022-05-16 01:48:03.725444",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "email_append_to": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "transform_method",
+  "file_to_process",
+  "process_file",
+  "final_result",
+  "processed_file",
+  "column_break_8",
+  "customer_po",
+  "processed_file_validation_log_section_section",
+  "processed_file_validation_log",
+  "create_customer_po",
+  "processed_file_section_section",
+  "show_processed_file_table",
+  "processed_file_table",
+  "history_section_section",
+  "etl_screen_history_log_table",
+  "etl_screen_history_log",
+  "edited_idx",
+  "section_break_19",
+  "subject",
+  "sender",
+  "section_break_22",
+  "status"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:!doc.__islocal && doc.customer && doc.transform_method",
+   "fieldname": "file_to_process",
+   "fieldtype": "Attach",
+   "label": "File to Process"
+  },
+  {
+   "depends_on": "eval:doc.file_to_process && !doc.final_result",
+   "fieldname": "process_file",
+   "fieldtype": "Button",
+   "label": "Process File"
+  },
+  {
+   "fieldname": "final_result",
+   "fieldtype": "Attach",
+   "hidden": 1,
+   "label": "Final Result",
+   "read_only": 1
+  },
+  {
+   "fieldname": "transform_method",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Transform Method",
+   "options": "Transformation Method",
+   "reqd": 1
+  },
+  {
+   "fieldname": "processed_file",
+   "fieldtype": "HTML",
+   "label": "Processed File"
+  },
+  {
+   "depends_on": "eval:!doc.__islocal && doc.customer && doc.transform_method && doc.final_result",
+   "fieldname": "processed_file_section_section",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Processed File Section"
+  },
+  {
+   "default": "0",
+   "fieldname": "show_processed_file_table",
+   "fieldtype": "Check",
+   "label": "Show Processed File table"
+  },
+  {
+   "depends_on": "eval:doc.show_processed_file_table",
+   "fieldname": "processed_file_table",
+   "fieldtype": "Table",
+   "label": "Processed File table",
+   "options": "Processed File table",
+   "read_only": 1
+  },
+  {
+   "fieldname": "processed_file_validation_log",
+   "fieldtype": "Table",
+   "label": "Processed File Validation Log",
+   "options": "Processed File Validation Log Table"
+  },
+  {
+   "depends_on": "eval:!doc.__islocal && doc.customer && doc.transform_method && doc.final_result",
+   "fieldname": "processed_file_validation_log_section_section",
+   "fieldtype": "Section Break",
+   "label": "Processed File Validation Log Section"
+  },
+  {
+   "fieldname": "create_customer_po",
+   "fieldtype": "Button",
+   "label": "Create Customer PO"
+  },
+  {
+   "depends_on": "eval:!doc.__islocal && doc.customer && doc.transform_method",
+   "fieldname": "history_section_section",
+   "fieldtype": "Section Break",
+   "label": "History Section"
+  },
+  {
+   "fieldname": "etl_screen_history_log_table",
+   "fieldtype": "HTML",
+   "label": "ETL Screen History Log Table"
+  },
+  {
+   "fieldname": "etl_screen_history_log",
+   "fieldtype": "Table",
+   "hidden": 1,
+   "label": "ETL Screen History Log",
+   "options": "ETL Screen History Log",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_po",
+   "fieldtype": "Link",
+   "label": "Customer PO",
+   "options": "Customer PO",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "edited_idx",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "edited idx",
+   "read_only": 1
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Status"
+  },
+  {
+   "fieldname": "subject",
+   "fieldtype": "Text",
+   "label": "Subject"
+  },
+  {
+   "fieldname": "sender",
+   "fieldtype": "Data",
+   "label": "Sender",
+   "options": "Email"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break",
+   "hidden": 1
+  },
+  {
+   "fieldname": "section_break_22",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "hide_toolbar": 1,
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2022-08-31 17:07:37.709055",
+ "modified_by": "Administrator",
+ "module": "Hampden",
+ "name": "ETL Setup Screen",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sender_field": "sender",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "subject_field": "subject",
+ "track_changes": 1
+}

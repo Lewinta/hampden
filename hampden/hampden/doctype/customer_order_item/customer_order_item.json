@@ -1,0 +1,69 @@
+{
+ "creation": "2021-11-15 06:29:15.881589",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer_order",
+  "item_code",
+  "item_name",
+  "qty",
+  "production_status",
+  "sales_order_item"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer Order",
+   "options": "Sales Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fieldname": "item_name",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Item Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "qty",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Qty",
+   "read_only": 1
+  },
+  {
+   "fieldname": "production_status",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "Production Status",
+   "options": "Production Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_order_item",
+   "fieldtype": "Read Only",
+   "label": "sales_order_item"
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-11-22 04:45:56.517033",
+ "modified_by": "Administrator",
+ "module": "Hampden",
+ "name": "Customer Order Item",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

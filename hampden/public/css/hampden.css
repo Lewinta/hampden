@@ -1,0 +1,16 @@
+[data-fieldname="total_production_route"] .like-disabled-input,
+[data-fieldname="total_cost"] .like-disabled-input,
+[data-fieldname="raw_material_cost"] .like-disabled-input {
+  border: 1px solid #097a6b;
+  background-color: #fffdf4;
+}
+
+[data-fieldname="total_production_route"] .control-label,
+[data-fieldname="total_cost"] .control-label,
+[data-fieldname="raw_material_cost"] .control-label {
+  font-weight: bold;
+}
+
+[data-fieldname="scrap_material_cost"] .like-disabled-input {
+  border: 1px solid #b31412;
+}

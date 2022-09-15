@@ -1,0 +1,129 @@
+{
+ "autoname": "DO.YY.MM.DD.-.####",
+ "creation": "2022-02-21 07:39:49.049391",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "production_route",
+  "column_break_3",
+  "date",
+  "section_break_5",
+  "production_steps",
+  "production_orders_section",
+  "order_barcode",
+  "batch_order",
+  "design_panels",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "production_route",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Production Route",
+   "options": "Production Route",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "date",
+   "fieldtype": "Datetime",
+   "label": "Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "production_orders_section",
+   "fieldtype": "Section Break",
+   "label": "Production Orders"
+  },
+  {
+   "fieldname": "order_barcode",
+   "fieldtype": "Data",
+   "label": "Production Order",
+   "no_copy": 1
+  },
+  {
+   "fieldname": "batch_order",
+   "fieldtype": "Table",
+   "label": "Tray Production Orders",
+   "options": "Design Production Order"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "production_steps",
+   "fieldtype": "Table",
+   "label": "Production Steps",
+   "options": "Design Steps",
+   "reqd": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Design Order",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "design_panels",
+   "fieldtype": "Table",
+   "label": "Design Panels",
+   "options": "Design Panel"
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2022-02-28 08:04:23.762982",
+ "modified_by": "Administrator",
+ "module": "Hampden",
+ "name": "Design Order",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Manufacturing User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

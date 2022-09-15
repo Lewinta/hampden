@@ -1,0 +1,165 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2022-08-17 12:14:48.836249",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "number",
+  "line",
+  "item",
+  "supplier_item",
+  "quantity",
+  "description",
+  "left_letter",
+  "center_letter",
+  "right_letter",
+  "chain_length",
+  "metal",
+  "uom",
+  "price",
+  "amount",
+  "ship_to",
+  "ship_to_address",
+  "ship_to_city",
+  "ship_to_state",
+  "ship_to_zip"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fieldname": "number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Number"
+  },
+  {
+   "columns": 1,
+   "fieldname": "line",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Line"
+  },
+  {
+   "columns": 1,
+   "fieldname": "item",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Item"
+  },
+  {
+   "columns": 1,
+   "fieldname": "supplier_item",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Supplier Item"
+  },
+  {
+   "columns": 1,
+   "fieldname": "quantity",
+   "fieldtype": "Int",
+   "in_list_view": 1,
+   "label": "Quantity"
+  },
+  {
+   "columns": 2,
+   "fieldname": "description",
+   "fieldtype": "Long Text",
+   "in_list_view": 1,
+   "label": "Description"
+  },
+  {
+   "columns": 1,
+   "fieldname": "left_letter",
+   "fieldtype": "Data",
+   "label": "Left Letter"
+  },
+  {
+   "fieldname": "center_letter",
+   "fieldtype": "Data",
+   "label": "Center Letter"
+  },
+  {
+   "fieldname": "right_letter",
+   "fieldtype": "Data",
+   "label": "Right Letter"
+  },
+  {
+   "columns": 1,
+   "fieldname": "chain_length",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Chain Length"
+  },
+  {
+   "columns": 1,
+   "fieldname": "metal",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Metal"
+  },
+  {
+   "columns": 1,
+   "fieldname": "uom",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "UOM"
+  },
+  {
+   "columns": 1,
+   "fieldname": "price",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Price"
+  },
+  {
+   "columns": 1,
+   "fieldname": "amount",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Amount"
+  },
+  {
+   "fieldname": "ship_to",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ship To"
+  },
+  {
+   "fieldname": "ship_to_address",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ship To Address"
+  },
+  {
+   "fieldname": "ship_to_city",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ship To City"
+  },
+  {
+   "fieldname": "ship_to_state",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ship To State"
+  },
+  {
+   "fieldname": "ship_to_zip",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Ship To Zip"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2022-08-17 12:56:10.621029",
+ "modified_by": "Administrator",
+ "module": "Hampden",
+ "name": "Processed File table",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

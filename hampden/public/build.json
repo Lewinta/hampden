@@ -1,0 +1,5 @@
+{
+    "hampden/js/hampden.min.js": [
+        "public/js/transaction.js"
+    ]
+}

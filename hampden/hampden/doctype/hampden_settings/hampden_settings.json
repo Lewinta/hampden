@@ -1,0 +1,257 @@
+{
+ "actions": [],
+ "creation": "2021-03-27 16:12:06.236741",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "purchasing_and_valuations_rate_section",
+  "update_item_rate",
+  "allow_zero_rate",
+  "update_valuation_rates_column",
+  "based_on_vr",
+  "based_on_lpr",
+  "work_order_defaults_section",
+  "wip_warehouse",
+  "scrap_warehouse",
+  "target_warehouse",
+  "use_multi_level_bom",
+  "bom_defaults_section",
+  "rate_based_on",
+  "price_list",
+  "pl_currency",
+  "pl_exchange_rate",
+  "column_break_16",
+  "accounts_settings_section",
+  "auto_jv",
+  "creditor_account",
+  "labor_account",
+  "overhead_account",
+  "intrinsic_account",
+  "fabrication_account",
+  "cutting_loss_account",
+  "variance_account",
+  "column_break_28",
+  "auto_item_price",
+  "default_currency",
+  "default_price_list",
+  "multi_prod_order"
+ ],
+ "fields": [
+  {
+   "fieldname": "purchasing_and_valuations_rate_section",
+   "fieldtype": "Section Break",
+   "label": "Purchasing and Valuations Rate"
+  },
+  {
+   "fieldname": "work_order_defaults_section",
+   "fieldtype": "Section Break",
+   "label": "Production Order Defaults"
+  },
+  {
+   "fieldname": "bom_defaults_section",
+   "fieldtype": "Section Break",
+   "label": "BOM Defaults"
+  },
+  {
+   "depends_on": "eval:doc.rate_based_on=='Price List'",
+   "fieldname": "price_list",
+   "fieldtype": "Link",
+   "label": "Price List",
+   "options": "Price List"
+  },
+  {
+   "fieldname": "accounts_settings_section",
+   "fieldtype": "Section Break",
+   "label": "Accounts Defaults"
+  },
+  {
+   "default": "0",
+   "description": "Auto Update Valuation Rate in Item Master",
+   "fieldname": "update_item_rate",
+   "fieldtype": "Check",
+   "label": "Auto Update Valuation Rate"
+  },
+  {
+   "fieldname": "wip_warehouse",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Default Work in Progress Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "scrap_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Scrap Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "target_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Target Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.rate_based_on=='Price List'",
+   "fieldname": "pl_currency",
+   "fieldtype": "Link",
+   "label": "Price List Currency",
+   "options": "Currency"
+  },
+  {
+   "depends_on": "eval:doc.rate_based_on=='Price List'",
+   "fieldname": "pl_exchange_rate",
+   "fieldtype": "Float",
+   "label": "Price List Exchange Rate"
+  },
+  {
+   "depends_on": "auto_jv",
+   "fieldname": "labor_account",
+   "fieldtype": "Link",
+   "label": "Default Labor Account",
+   "options": "Account"
+  },
+  {
+   "depends_on": "auto_jv",
+   "fieldname": "creditor_account",
+   "fieldtype": "Link",
+   "label": "Default Creditor Account",
+   "options": "Account"
+  },
+  {
+   "depends_on": "auto_jv",
+   "fieldname": "overhead_account",
+   "fieldtype": "Link",
+   "label": "Default Overhead Account",
+   "options": "Account"
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Valuation Rate",
+   "fieldname": "rate_based_on",
+   "fieldtype": "Select",
+   "label": "Rate Of Materials Based On",
+   "options": "Valuation Rate\nLast Purchase Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "use_multi_level_bom",
+   "fieldtype": "Check",
+   "label": "Use Multi Level BOM"
+  },
+  {
+   "fieldname": "update_valuation_rates_column",
+   "fieldtype": "Column Break",
+   "label": "Update Valuation Rates"
+  },
+  {
+   "fieldname": "based_on_vr",
+   "fieldtype": "Button",
+   "label": "Update Based On Valuation Rate"
+  },
+  {
+   "fieldname": "based_on_lpr",
+   "fieldtype": "Button",
+   "label": "Update Based On Last Purchase Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "allow_zero_rate",
+   "fieldtype": "Check",
+   "label": "Allow Zero Rate"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_jv",
+   "fieldtype": "Check",
+   "label": "Create Journal Entry for Completed Order"
+  },
+  {
+   "fieldname": "column_break_28",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "auto_item_price",
+   "fieldname": "default_currency",
+   "fieldtype": "Link",
+   "label": "Default Currency",
+   "options": "Currency"
+  },
+  {
+   "depends_on": "auto_item_price",
+   "fieldname": "default_price_list",
+   "fieldtype": "Link",
+   "label": "Default Price List",
+   "options": "Price List"
+  },
+  {
+   "default": "0",
+   "fieldname": "auto_item_price",
+   "fieldtype": "Check",
+   "label": "Auto Update Item Price"
+  },
+  {
+   "depends_on": "auto_jv",
+   "fieldname": "intrinsic_account",
+   "fieldtype": "Link",
+   "label": "Default Intrinsic Account",
+   "options": "Account"
+  },
+  {
+   "depends_on": "auto_jv",
+   "fieldname": "fabrication_account",
+   "fieldtype": "Link",
+   "label": "Default Fabrication Account",
+   "options": "Account"
+  },
+  {
+   "depends_on": "auto_jv",
+   "fieldname": "cutting_loss_account",
+   "fieldtype": "Link",
+   "label": "Default Cutting Loss Account",
+   "options": "Account"
+  },
+  {
+   "depends_on": "auto_jv",
+   "fieldname": "variance_account",
+   "fieldtype": "Link",
+   "label": "Default Variance Account",
+   "options": "Account"
+  },
+  {
+   "default": "0",
+   "fieldname": "multi_prod_order",
+   "fieldtype": "Check",
+   "label": "multi prod order"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-03-31 05:19:40.910034",
+ "modified_by": "Administrator",
+ "module": "Hampden",
+ "name": "Hampden Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "Manufacturing Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,9 @@
+.DS_Store
+*.pyc
+*.egg-info
+*.swp
+tags
+hampden/docs/current
+__pycache__/
+*.min.js
+*.min.js.map

@@ -1,0 +1,118 @@
+{
+ "creation": "2021-11-15 06:10:54.164500",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "production_order",
+  "customer_order",
+  "column_break_3",
+  "item_to_manufacture",
+  "section_break_6",
+  "last_finished_step",
+  "column_break_8",
+  "finished_at",
+  "finished_by",
+  "next_production_step",
+  "amended_from",
+  "step_idx"
+ ],
+ "fields": [
+  {
+   "fieldname": "production_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Production Order",
+   "options": "Production Order",
+   "reqd": 1
+  },
+  {
+   "fieldname": "customer_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Customer Order",
+   "options": "Sales Order",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "item_to_manufacture",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item To Manufacture",
+   "options": "Item",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "last_finished_step",
+   "fieldtype": "Data",
+   "label": "Last Finished Step",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "finished_at",
+   "fieldtype": "Data",
+   "label": "Finished At",
+   "reqd": 1
+  },
+  {
+   "fieldname": "finished_by",
+   "fieldtype": "Data",
+   "label": "Finished By",
+   "reqd": 1
+  },
+  {
+   "fieldname": "next_production_step",
+   "fieldtype": "Data",
+   "label": "Next Production Step "
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Production Ledger",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "step_idx",
+   "fieldtype": "Read Only",
+   "label": "Step idx"
+  }
+ ],
+ "is_submittable": 1,
+ "modified": "2021-11-17 07:55:21.318036",
+ "modified_by": "Administrator",
+ "module": "Hampden",
+ "name": "Production Ledger",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

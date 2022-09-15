@@ -1,0 +1,84 @@
+{
+ "creation": "2021-04-27 03:38:44.200683",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "production_step",
+  "issue_step",
+  "labor",
+  "overhead",
+  "date",
+  "completed_by",
+  "finish_the_step"
+ ],
+ "fields": [
+  {
+   "allow_in_quick_entry": 1,
+   "fieldname": "production_step",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Production Step",
+   "options": "Production Step",
+   "read_only": 1
+  },
+  {
+   "fieldname": "issue_step",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Issue Step",
+   "options": "Issue Step",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "production_step.labor",
+   "fetch_if_empty": 1,
+   "fieldname": "labor",
+   "fieldtype": "Read Only",
+   "label": "labor",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "production_step.overhead",
+   "fetch_if_empty": 1,
+   "fieldname": "overhead",
+   "fieldtype": "Read Only",
+   "label": "overhead",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Date",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "!date",
+   "fieldname": "finish_the_step",
+   "fieldtype": "Button",
+   "in_list_view": 1,
+   "label": "Finish/Reset Step"
+  },
+  {
+   "fieldname": "completed_by",
+   "fieldtype": "Link",
+   "label": "Completed By",
+   "options": "User",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-12-13 06:06:12.061993",
+ "modified_by": "Administrator",
+ "module": "Hampden",
+ "name": "Production Order Steps",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

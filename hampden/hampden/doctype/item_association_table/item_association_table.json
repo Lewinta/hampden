@@ -1,0 +1,114 @@
+{
+    "creation": "2021-12-19 16:22:22.582336",
+    "doctype": "DocType",
+    "editable_grid": 1,
+    "engine": "InnoDB",
+    "field_order": [
+        "independent",
+        "dependent",
+        "scrap",
+        "column_break_4",
+        "dependent_percentage",
+        "scrap_percentage",
+        "cutting_loss_"
+    ],
+    "fields": [{
+            "columns": 2,
+            "fieldname": "independent",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "INDEPENDENT",
+            "options": "Item",
+            "unique": 1
+        },
+        {
+            "columns": 2,
+            "fieldname": "dependent",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "DEPENDENT",
+            "options": "Item",
+            "reqd": 1,
+            "width": "2"
+        },
+        {
+            "columns": 2,
+            "fieldname": "scrap",
+            "fieldtype": "Link",
+            "in_list_view": 1,
+            "label": "SCRAP",
+            "options": "Item"
+        },
+        {
+            "columns": 1,
+            "fieldname": "dependent_percentage",
+            "fieldtype": "Percent",
+            "in_list_view": 1,
+            "label": "Dependent %",
+            "width": "100px"
+        },
+        {
+            "columns": 1,
+            "fieldname": "scrap_percentage",
+            "fieldtype": "Percent",
+            "in_list_view": 1,
+            "label": "Scrap %"
+        },
+        {
+            "fieldname": "column_break_4",
+            "fieldtype": "Column Break"
+        },
+        {
+            "columns": 2,
+            "fieldname": "cutting_loss_",
+            "fieldtype": "Percent",
+            "in_list_view": 1,
+            "label": "Cutting Loss %",
+            "width": "150px"
+        }
+    ],
+    "modified": "2021-12-20 15:09:55.562133",
+    "modified_by": "Administrator",
+    "module": "Hampden",
+    "name": "Item Association Table",
+    "owner": "Administrator",
+    "permissions": [{
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "System Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "delete": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Manufacturing Manager",
+            "share": 1,
+            "write": 1
+        },
+        {
+            "create": 1,
+            "email": 1,
+            "export": 1,
+            "print": 1,
+            "read": 1,
+            "report": 1,
+            "role": "Manufacturing User",
+            "share": 1,
+            "write": 1
+        }
+    ],
+    "sort_field": "modified",
+    "sort_order": "DESC",
+    "track_changes": 1
+}

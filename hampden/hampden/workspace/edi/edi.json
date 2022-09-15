@@ -1,0 +1,78 @@
+{
+ "category": "Modules",
+ "charts": [],
+ "creation": "2022-05-16 04:52:37.228284",
+ "developer_mode_only": 0,
+ "disable_user_customization": 0,
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "extends_another_page": 0,
+ "hide_custom": 0,
+ "icon": "file",
+ "idx": 0,
+ "is_default": 0,
+ "is_standard": 1,
+ "label": "EDI",
+ "links": [
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer PO",
+   "link_type": "DocType",
+   "onboard": 0,
+   "only_for": "",
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Customer PO",
+   "link_to": "Customer PO",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "External Item Pairing",
+   "link_type": "DocType",
+   "onboard": 0,
+   "only_for": "",
+   "type": "Card Break"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Item Pairing",
+   "link_to": "Item Pairing",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  },
+  {
+   "hidden": 0,
+   "is_query_report": 0,
+   "label": "Transformation Method",
+   "link_to": "Transformation Method",
+   "link_type": "DocType",
+   "onboard": 0,
+   "type": "Link"
+  }
+ ],
+ "modified": "2022-07-25 17:05:20.286993",
+ "modified_by": "Administrator",
+ "module": "Hampden",
+ "name": "EDI",
+ "owner": "Administrator",
+ "pin_to_bottom": 0,
+ "pin_to_top": 1,
+ "shortcuts": [
+  {
+   "doc_view": "",
+   "label": "ETL Setup Screen",
+   "link_to": "ETL Setup Screen",
+   "type": "DocType"
+  }
+ ]
+}

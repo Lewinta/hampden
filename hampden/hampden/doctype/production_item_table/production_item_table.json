@@ -1,0 +1,109 @@
+{
+ "creation": "2021-01-10 11:59:42.567094",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "production_step",
+  "issue_step",
+  "labor",
+  "overhead",
+  "qty",
+  "column_break_5",
+  "total_labor",
+  "total_overhead",
+  "total"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "fetch_from": "production_step.labor",
+   "fetch_if_empty": 1,
+   "fieldname": "labor",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "labor",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fetch_from": "production_step.overhead",
+   "fetch_if_empty": 1,
+   "fieldname": "overhead",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "overhead",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "default": "1",
+   "fieldname": "qty",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "qty"
+  },
+  {
+   "columns": 2,
+   "fieldname": "total_labor",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Labor",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 2,
+   "fieldname": "total_overhead",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total Overhead",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "total",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Total",
+   "precision": "2",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "columns": 2,
+   "fieldname": "production_step",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Production Step",
+   "options": "Production Step",
+   "read_only": 1
+  },
+  {
+   "columns": 1,
+   "fieldname": "issue_step",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Issue Step",
+   "options": "Issue Step",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2021-06-26 05:19:00.523607",
+ "modified_by": "Administrator",
+ "module": "Hampden",
+ "name": "Production Item Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

@@ -1,0 +1,79 @@
+{
+ "creation": "2022-02-21 07:52:09.547380",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "production_order",
+  "column_break_2",
+  "item_code",
+  "quantity",
+  "section_break_5",
+  "personalization",
+  "section_break_7",
+  "panel"
+ ],
+ "fields": [
+  {
+   "fieldname": "production_order",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Production Order",
+   "options": "Production Order",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_2",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "production_order.production_item",
+   "fieldname": "item_code",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Item Code",
+   "options": "Item",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "production_order.qty",
+   "fieldname": "quantity",
+   "fieldtype": "Float",
+   "in_list_view": 1,
+   "label": "Quantity",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fetch_from": "production_order.production_item",
+   "fieldname": "personalization",
+   "fieldtype": "Text Editor",
+   "label": "Personalization",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "panel",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Panel"
+  }
+ ],
+ "istable": 1,
+ "modified": "2022-02-28 07:58:47.312515",
+ "modified_by": "Administrator",
+ "module": "Hampden",
+ "name": "Design Production Order",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

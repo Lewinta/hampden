@@ -1,0 +1,71 @@
+{
+ "creation": "2021-01-10 06:33:12.107128",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "production_step",
+  "issue_step",
+  "labor",
+  "overhead",
+  "in_design"
+ ],
+ "fields": [
+  {
+   "columns": 2,
+   "fetch_from": "production_step.labor",
+   "fetch_if_empty": 1,
+   "fieldname": "labor",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "labor"
+  },
+  {
+   "columns": 2,
+   "fetch_from": "production_step.overhead",
+   "fetch_if_empty": 1,
+   "fieldname": "overhead",
+   "fieldtype": "Read Only",
+   "in_list_view": 1,
+   "label": "overhead"
+  },
+  {
+   "allow_in_quick_entry": 1,
+   "columns": 2,
+   "fieldname": "production_step",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Production Step",
+   "options": "Production Step"
+  },
+  {
+   "columns": 2,
+   "fieldname": "issue_step",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Issue Step",
+   "options": "Issue Step"
+  },
+  {
+   "columns": 2,
+   "default": "0",
+   "fetch_from": "production_step.in_design",
+   "fieldname": "in_design",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "In Design",
+   "read_only": 1
+  }
+ ],
+ "istable": 1,
+ "modified": "2022-02-21 07:48:01.040207",
+ "modified_by": "Administrator",
+ "module": "Hampden",
+ "name": "Production Route Table",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

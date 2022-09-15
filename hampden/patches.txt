@@ -1,0 +1,1 @@
+hampden.patches.v13_0.remove_customer_custom_fields

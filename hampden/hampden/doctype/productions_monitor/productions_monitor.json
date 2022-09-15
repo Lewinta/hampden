@@ -1,0 +1,44 @@
+{
+ "creation": "2021-07-14 06:46:16.588175",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "order_list",
+  "order_details"
+ ],
+ "fields": [
+  {
+   "fieldname": "order_list",
+   "fieldtype": "HTML",
+   "label": "Order List"
+  },
+  {
+   "fieldname": "order_details",
+   "fieldtype": "HTML",
+   "label": "Order Details"
+  }
+ ],
+ "hide_toolbar": 1,
+ "issingle": 1,
+ "modified": "2021-07-14 06:46:16.588175",
+ "modified_by": "Administrator",
+ "module": "Hampden",
+ "name": "Productions Monitor",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}

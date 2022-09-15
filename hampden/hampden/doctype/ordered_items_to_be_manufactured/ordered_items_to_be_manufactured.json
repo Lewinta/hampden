@@ -1,0 +1,84 @@
+{
+ "allow_copy": 1,
+ "creation": "2021-11-15 06:28:28.829561",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "from_date",
+  "fetch_items",
+  "column_break_3",
+  "to_date",
+  "include_manufactured_items",
+  "section_break_5",
+  "customer_order_items",
+  "create_production_orders"
+ ],
+ "fields": [
+  {
+   "fieldname": "from_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "From Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "fetch_items",
+   "fieldtype": "Button",
+   "label": "Fetch Items"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "to_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "To Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "customer_order_items",
+   "fieldtype": "Table",
+   "label": "Customer Order Items",
+   "options": "Customer Order Item"
+  },
+  {
+   "fieldname": "create_production_orders",
+   "fieldtype": "Button",
+   "label": "Create Production Orders"
+  },
+  {
+   "default": "0",
+   "fieldname": "include_manufactured_items",
+   "fieldtype": "Check",
+   "label": "Include Manufactured Items"
+  }
+ ],
+ "hide_toolbar": 1,
+ "issingle": 1,
+ "modified": "2021-11-22 04:42:58.625636",
+ "modified_by": "Administrator",
+ "module": "Hampden",
+ "name": "Ordered Items To Be Manufactured",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "print": 1,
+   "read": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
